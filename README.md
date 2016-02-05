@@ -33,3 +33,7 @@ Despliega un listado con todos los autores de un repositorio de git junto con la
 	./gitHistory.coffee -r "direccion/a/mi/repo" -o recent
 
 
+## Ejemplo de resultado
+
+	Author        Commits Last commit Repo       Last words                         
+	Carlos Flores 5       2016-02-05  gitHistory adding more swag to the mombo jombo
