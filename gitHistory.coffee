@@ -1,3 +1,5 @@
+#!/usr/bin/env coffee
+
 fs = require 'fs'
 async = require 'async'
 spawn = require('child_process').spawn
@@ -5,10 +7,9 @@ Table = require 'cli-table'
 program = require 'commander'
 
 traeLogs = (original,cb)->
-	if original.indexOf(',') isnt -1
-		original = original.split(',').map (e)->
-			e+='/' if e[-1..] isnt '/'
-			return e.trim()
+	original = original.split(',').map (e)->
+		e+='/' if e[-1..] isnt '/'
+		return e.trim()
 	exclude = [
 		'node_modules'
 		'bower_components'
@@ -91,7 +92,7 @@ traeLogs program.repo, (logs)->
 		chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': '', 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': '', 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': '', 'right': '' , 'right-mid': '' , 'middle': ' ' },
 		style: { 'padding-left': 0, 'padding-right': 0 }
 	})
-	table.push ['Usuario','Commits','Last commit','Repo','Last words']
+	table.push ['Author','Commits','Last commit','Repo','Last words']
 	d = (epoch)->
 		addZ = (i)-> ('00'+i).slice(-2)
 		dd = new Date epoch*1000
