@@ -32,3 +32,4 @@ Despliega un listado con todos los autores de un repositorio de git junto con la
 
 	./gitHistory.coffee -r "direccion/a/mi/repo" -o recent
 
+
